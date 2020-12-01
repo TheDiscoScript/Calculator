@@ -36,26 +36,22 @@ function deleting(){
 
 
 //function to pick operation
-function pickOperation(operation){
-    console.log(operation)
+function pickOperation(input){
+    operation = input
     if(operand === '')return;
     if(log !== ""){
         count()
     }
+    
     log = operand + ' ' + operation;
     operand = ''
-
 }
+
 function count(){
     let result = 0;
     let x = log.split(' ')
     let cleanLog = parseInt(x[0])
     let typedOperand = parseInt(operand)
-    console.log(operation)
-    console.log(cleanLog)
-    console.log(typeof(cleanLog))
-    console.log(typedOperand)
-    console.log(typeof(typedOperand))
     switch(operation){
         case '+':
             result = cleanLog + typedOperand
@@ -69,9 +65,19 @@ function count(){
         case '÷':
             result = cleanLog / typedOperand
             break  
-        default:
-            result = cleanLog + typedOperand
-            return;     
+        case '1/x':
+            result = 1 / cleanLog
+            break    
+        case 'x2':
+            result = cleanLog * cleanLog
+            break             
+         case 'x^(1/2)':
+            result = Math.sqrt(cleanLog)
+            break 
+        case '%':
+            result = cleanLog % typedOperand
+            break        
+
     }
     operand = result
     operation = ''
