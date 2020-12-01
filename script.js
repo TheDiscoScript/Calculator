@@ -32,21 +32,16 @@ function deleting(){
     updateOutput();
 }
 
-
-
-
 //function to pick operation
 function pickOperation(input){
-    operation = input
     if(operand === '')return;
     if(log !== ""){
         count()
     }
-    
+    operation = input
     log = operand + ' ' + operation;
     operand = ''
 }
-
 function count(){
     let result = 0;
     let x = log.split(' ')
@@ -84,7 +79,6 @@ function count(){
     log = ''
 }
 
-
 //function for passing number into variable, that will be used in updateOutput()
 function passNumberToOutput(number){
     if(number === '.' && operand.includes('.')) return;
@@ -95,16 +89,12 @@ function updateOutput(){
     operandText.innerHTML = numberWithCommas(operand)
     logText.innerHTML = numberWithCommas(log)
 }
-
 //function for commas in updateOutput //copiedfrom stack overflow
 function numberWithCommas(output) {
     var parts = output.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
-
-
-
 //event listeners
 //clicking on number buttons
 numberButtons.forEach(button =>{
