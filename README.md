@@ -12,3 +12,4 @@ similar to windows10 calculator design
 bit janky, but works
 
 # git pages
+https://willdooo.github.io/odinProject_Calculator/
